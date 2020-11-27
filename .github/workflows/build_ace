@@ -1,0 +1,26 @@
+name: build_ace
+on:
+  push:
+    branches:
+	  - master
+jobs:
+  build:
+	runs-on: ubuntu-18.04
+	steps:
+	  - name: Init Repo
+		  run: |
+		    cd ~
+		    git clone https://github.com/jfrostbite/ace.git -b master --depth=1
+	  - name: Build With Shell
+	    run: |
+		    cd ~/ace
+		    bash build_full.sh
+	  - name: zip ace
+      run: |
+        mkdir final
+        #zip -r final/GSI.zip /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/
+       zip -r final/ace.zip /msm-4.14/out/arch/arm64/boot/
+    - name: Upload ace to wet
+      run: |
+        curl -sL https://git.io/file-transfer | sh
+        ./transfer wet final/GSI.zip
