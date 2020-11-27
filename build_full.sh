@@ -28,5 +28,5 @@ cd msm-4.14
 make clean 
 make mrproper 
 args="-j$(nproc --all) O=out ARCH=arm64 SUBARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu-" 
-make ${args} O=out blu_spark_defconfig 
+make ${args} O=out ace 
 make ${args} CONFIG_DEBUG_SECTION_MISMATCH=y
