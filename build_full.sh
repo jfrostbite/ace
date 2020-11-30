@@ -25,8 +25,9 @@ export CROSS_COMPILE=aarch64-none-linux-gnu-
 git clone https://github.com/jfrostbite/ace.git
 cd ace
 cd msm-4.14
+mkdir output
 make clean 
 make mrproper 
-args="-j$(nproc --all) O=out ARCH=arm64 SUBARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu-" 
-make ${args} O=out ace 
-make ${args} CONFIG_DEBUG_SECTION_MISMATCH=y
+# args="-j$(nproc --all) O=out ARCH=arm64 SUBARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu-" 
+make make O=output msm-4.14_user_defconfig
+make CONFIG_DEBUG_SECTION_MISMATCH=y
