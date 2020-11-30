@@ -3,7 +3,7 @@
 # On E3 1270 v6, 4c8t-3.7Ghz 32G RAM With SSD
 
 cd ~
-
+umask 002
 # Env
 sudo apt update && sudo apt -y dist-upgrade
 sudo apt install -y gcc g++ python make texinfo texlive bc bison build-essential ccache curl flex g++-multilib gcc-multilib \
@@ -29,5 +29,6 @@ mkdir output
 make clean 
 make mrproper 
 # args="-j$(nproc --all) O=out ARCH=arm64 SUBARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu-" 
-make make O=output msm-4.14_user_defconfig
+make O=output msm-4.14_user_defconfig
+make O=output
 make CONFIG_DEBUG_SECTION_MISMATCH=y
