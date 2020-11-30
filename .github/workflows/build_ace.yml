@@ -21,7 +21,7 @@ jobs:
       run: |
         mkdir final
         #zip -r final/GSI.zip /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/
-        zip -r final/ace.zip /msm-4.14/out/arch/arm64/boot/
+        zip -r final/ace.zip /msm-4.14/output/arch/arm64/boot/
 
     - name: Upload ace to wet
       run: |
