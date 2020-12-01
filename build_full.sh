@@ -29,5 +29,5 @@ mkdir output
 make clean 
 make mrproper 
 # args="-j$(nproc --all) O=out ARCH=arm64 SUBARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu-" 
-make menuconfig
-make O=output
+make ranchu64_defconfig
+make
