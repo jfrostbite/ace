@@ -29,6 +29,5 @@ mkdir output
 make clean 
 make mrproper 
 # args="-j$(nproc --all) O=out ARCH=arm64 SUBARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu-" 
-make O=output msm-4.14_user_defconfig
+make menuconfig
 make O=output
-make CONFIG_DEBUG_SECTION_MISMATCH=y
